@@ -1,21 +1,22 @@
-import { SearchIcon } from "@assets";
-import { useDispatch, useSelector } from "react-redux";
-import { filterArrBySearchQuery } from "@redux/services/movies/moviesApiSlice";
+import { useSelector } from "react-redux";
+import { useSearchMovieQuery } from "@redux/services/movies/moviesApi";
+import { useState } from "react";
 
 const SearchBar = () => {
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.data);
+  const [searchQuery, setSearchQuery] = useState("");
+  const { data, isLoading } = useSearchMovieQuery(searchQuery);
+  const filteredArr = useSelector((state) => state.filteredMovieData);
 
   return (
-    <form class="flex items-center">
-      <label for="simple-search" class="sr-only">
+    <form className="flex items-center">
+      <label for="simple-search" className="sr-only">
         Search
       </label>
-      <div class="relative w-full">
-        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+      <div className="relative w-full mx-5 sm:mx-0">
+        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
           <svg
             aria-hidden="true"
-            class="w-5 h-5 text-gray-400"
+            className="w-5 h-5 text-gray-400"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -30,11 +31,10 @@ const SearchBar = () => {
         <input
           type="text"
           id="simple-search"
-          class="bg-stone-700 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full pl-10 p-2.5 bg-gray-70 border-gray-60 placeholder-gray-40 text-white"
+          className="bg-stone-700 border border-gray-300 text-sm rounded-lg block w-full pl-10 p-2.5 bg-gray-70 border-gray-60 placeholder-gray-40 text-white focus:outline-none"
           placeholder="Search Movies"
           onChange={(e) => {
-            // dispatch(filterArrBySearchQuery(e.target.value));
-            console.log(data);
+            setSearchQuery(e.target.value);
           }}
         />
       </div>
