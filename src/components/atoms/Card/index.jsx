@@ -28,7 +28,7 @@ const Card = ({ results, renderAll = false }) => {
               </div>
             </div>
           ))
-        : sliceArray(results, 0, 5).map((res, i) => (
+        : sliceArray(results, 0, 8).map((res, i) => (
             <div
               className="hover:cursor-pointer"
               key={i}
