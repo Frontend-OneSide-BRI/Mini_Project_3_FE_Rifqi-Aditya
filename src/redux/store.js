@@ -6,7 +6,7 @@ import dataReducer from "@services/movies/moviesApiSlice";
 export const store = configureStore({
   reducer: {
     // Add the generated reducer as a specific top-level slice
-    data: dataReducer,
+    filteredMovieData: dataReducer,
     [moviesApi.reducerPath]: moviesApi.reducer,
   },
   //required for RTK Query to work
