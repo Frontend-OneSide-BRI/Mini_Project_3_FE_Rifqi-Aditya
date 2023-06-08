@@ -12,7 +12,14 @@ export const moviesApi = baseApi.injectEndpoints({
       query: () => "/3/movie/popular",
     }),
     getMovieDetail: builder.query({
-      query: (movieId) => `https://api.themoviedb.org/3/movie/${movieId}`,
+      query: (movieId) => `/3/movie/${movieId}`,
+    }),
+    searchMovie: builder.query({
+      query: (searchQuery) =>
+        `/3/search/movie?query=${searchQuery}&include_adult=false&language=en-US`,
+    }),
+    getTopRatedMovies: builder.query({
+      query: (page) => `/3/movie/top_rated?language=en-US&page=${page}`,
     }),
   }),
   overrideExisting: false,
@@ -23,4 +30,6 @@ export const {
   useGetUpcomingMoviesQuery,
   useGetPopularMoviesQuery,
   useGetMovieDetailQuery,
+  useSearchMovieQuery,
+  useGetTopRatedMoviesQuery,
 } = moviesApi;
