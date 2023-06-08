@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;;
+    color: white;
+    background: url('https://www.max.com/img/page-bkgd-default.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@layer base {
+  :root {
+    --bg-btn-primary: 0 43 231;
+    --bg-btn-primary-hover: 0 33 178;
+  }
+}
