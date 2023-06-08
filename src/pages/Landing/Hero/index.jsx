@@ -1,4 +1,5 @@
-import { Button } from "@components/atoms";
+import { Button, SearchBar } from "@components/atoms";
+import "./hero.css";
 
 const Hero = () => {
   return (
@@ -12,13 +13,13 @@ const Hero = () => {
                 MOVIES FOR THE PEOPLE
               </p>
             </div>
-            <div className="w-fit mt-10">
-              <Button />
+            <div className="w-full mt-10">
+              <SearchBar />
             </div>
           </div>
         </div>
       </section>
-      <section className="bg-blue-primary h-[20vh]">
+      <section className="bg-stone-700 h-[20vh]">
         <div className="flex justify-center items-center h-full">
           <h2 className="text-3xl text-center font-semibold leading-10">
             It's all here! Iconic series, award-winning
