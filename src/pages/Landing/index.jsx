@@ -1,11 +1,10 @@
-import { SkeletonLoader } from "@components/atoms";
 import { useGetPopularMoviesQuery } from "@redux/services/movies/moviesApi";
-import { MainLayout } from "@components/organism";
-import Hero from "./Hero";
+import { MainLayout, ContentLayout } from "@components/organism";
+import Banner from "./Banner";
 import ComingSoon from "./ComingSoon";
 import Categories from "./Categories";
-import ContentLayout from "./ContentLayout";
 import { useGetUpcomingMoviesQuery } from "@redux/services/movies/moviesApi";
+import { Header } from "@components/molecules";
 
 const Landing = () => {
   const { data: upcomingMovies, isLoading: isLoadingUpcomingMovies } =
@@ -15,11 +14,10 @@ const Landing = () => {
 
   return (
     <MainLayout>
-      <Hero />
+      <Header />
+      <Banner />
       <ContentLayout>
-        {isLoadingPopularMovies || isLoadingUpcomingMovies ? (
-          <SkeletonLoader />
-        ) : (
+        {isLoadingPopularMovies || isLoadingUpcomingMovies ? null : (
           <>
             <ComingSoon data={upcomingMovies} />
             <Categories data={PopularMovies} />

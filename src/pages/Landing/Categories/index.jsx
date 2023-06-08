@@ -7,12 +7,14 @@ const Categories = ({ data }) => {
   return (
     <section>
       <div className="flex flex-col items-center test">
-        <div className="pb-28">
-          <div className="mt-40 mb-5">
-            <h3 className="mb-2 text-2xl font-bold tracking-widest">
+        <div>
+          <div className="mt-20 sm:mt-28 mb-5">
+            <h3 className="mb-2 text-base sm:text-2xl font-bold tracking-widest">
               THE ONE TO WATCH
             </h3>
-            <h2 className="text-6xl font-extralight">For the Biggest Hits</h2>
+            <h2 className="text-2xl sm:text-6xl font-extralight">
+              For the Biggest Hits
+            </h2>
           </div>
           <Card results={data.results} />
         </div>
