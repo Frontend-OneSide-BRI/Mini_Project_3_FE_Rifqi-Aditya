@@ -6,7 +6,7 @@ const ComingSoon = ({ data }) => {
   return (
     <section>
       <div className="flex flex-col">
-        <h3 className="text-3xl font-semibold mt-0 mb-6 text-center">
+        <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mt-0 mb-6">
           See what's new and coming soon.
         </h3>
         <Card results={data.results} />
