@@ -3,7 +3,7 @@ import { Button } from "@components/atoms";
 const Navbar = () => {
   return (
     <nav>
-      <div className="w-full flex flex-wrap items-center justify-between py-3 px-4 fixed bg-[rgb(0,0,0)]/70">
+      <div className="w-full flex flex-wrap items-center justify-between py-3 px-4 fixed bg-[rgb(0,0,0)]/70 z-10">
         <a href="#" className="flex items-center text-white font-bold text-4xl">
           PEOPL.
         </a>
